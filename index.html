@@ -7,19 +7,26 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
 
+  <!-- ═══ PROJECT MODAL OVERLAY ═══ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
   <!-- ═══ NAV ═══ -->
   <nav class="nav" id="nav">
-    <a class="nav__logo" href="#home">
-      <span class="logo-bracket">[</span>OT<span class="logo-bracket">]</span>
-    </a>
+    <a class="nav__logo" href="#home"><span class="logo-bracket">[</span>OT<span class="logo-bracket">]</span></a>
     <ul class="nav__links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -29,12 +36,9 @@
       <li><a href="#activities">Activities</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav__burger" id="burger" aria-label="menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav__burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#home" class="mob-link">Home</a></li>
@@ -47,7 +51,7 @@
     </ul>
   </div>
 
-  <!-- ═══ HERO ═══ -->
+  <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero" id="home">
     <div class="hero__bg">
       <div class="hero__noise"></div>
@@ -55,140 +59,111 @@
       <div class="hero__orb hero__orb--2"></div>
       <div class="hero__grid-lines"></div>
     </div>
-
     <div class="hero__layout">
-      <!-- LEFT -->
       <div class="hero__left">
-        <div class="hero__status">
-          <span class="status-pulse"></span>
-          Open to Opportunities
-        </div>
-
+        <div class="hero__status"><span class="status-pulse"></span>Open to Opportunities</div>
         <h1 class="hero__name">
           <span class="hero__firstname">Omkar</span>
-          <span class="hero__lastname">
-            <em>Tilloo</em>
+          <span class="hero__lastname"><em>Tilloo</em>
             <svg class="squiggle" viewBox="0 0 280 14" fill="none">
-              <path d="M3 10 C40 3, 80 13, 120 7 C160 1, 200 11, 277 5"
-                    stroke="url(#sq)" stroke-width="3" stroke-linecap="round" fill="none"/>
-              <defs>
-                <linearGradient id="sq" x1="0" y1="0" x2="280" y2="0">
-                  <stop stop-color="#F5C842"/>
-                  <stop offset="1" stop-color="#FF9B42"/>
-                </linearGradient>
-              </defs>
+              <path d="M3 10 C40 3, 80 13, 120 7 C160 1, 200 11, 277 5" stroke="url(#sq)" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <defs><linearGradient id="sq" x1="0" y1="0" x2="280" y2="0"><stop stop-color="#F5C842"/><stop offset="1" stop-color="#FF9B42"/></linearGradient></defs>
             </svg>
           </span>
         </h1>
-
-        <p class="hero__sub">
-          <span class="mono-tag">MEM @ NC State</span>
-          Supply Chain &amp; Operations · Engineering Management
-        </p>
-
+        <p class="hero__sub"><span class="mono-tag">MEM @ NC State</span> Supply Chain &amp; Operations · Project Management</p>
         <p class="hero__bio">
-          Building the bridge between <em>data, systems</em> and <em>operational excellence</em> — one optimized process at a time.
+          Optimizing <em>supply chains</em>, streamlining <em>operations</em>, and delivering <em>projects</em> that move the needle — from warehouse floors to strategic boardrooms.
         </p>
-
         <div class="hero__pills">
-          <span>SAP ERP</span><span>Power BI</span><span>SQL</span>
-          <span>Lean 5S</span><span>GAMS</span>
+          <span>🔗 Supply Chain</span><span>📦 Operations</span><span>📋 Project Mgmt</span><span>📊 Data Analytics</span><span>⚙️ Process Optimization</span>
         </div>
-
         <div class="hero__cta">
-          <a href="#projects" class="btn btn--fill">
-            View Projects
-            <svg viewBox="0 0 20 20" fill="none" width="16" height="16"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <a href="#projects" class="btn btn--fill">View Projects <svg viewBox="0 0 20 20" fill="none" width="16" height="16"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a href="#contact" class="btn btn--outline">Get in Touch</a>
         </div>
-
         <div class="hero__counters">
-          <div class="counter">
-            <span class="counter__num" data-target="2">0</span>
-            <span class="counter__label">Years Exp.</span>
-          </div>
+          <div class="counter"><span class="counter__num" data-target="2">0</span><span class="counter__label">Years Exp.</span></div>
           <div class="counter__sep"></div>
-          <div class="counter">
-            <span class="counter__num" data-target="10">0</span><span class="counter__plus">+</span>
-            <span class="counter__label">Projects</span>
-          </div>
+          <div class="counter"><span class="counter__num" data-target="10">0</span><span class="counter__plus">+</span><span class="counter__label">Projects</span></div>
           <div class="counter__sep"></div>
-          <div class="counter">
-            <span class="counter__num" data-target="3">0</span>
-            <span class="counter__label">Leadership Roles</span>
-          </div>
+          <div class="counter"><span class="counter__num" data-target="3">0</span><span class="counter__label">Leadership Roles</span></div>
         </div>
       </div>
-
-      <!-- RIGHT: PHOTO -->
       <div class="hero__right">
         <div class="photo-scene">
           <div class="photo-halo photo-halo--outer"></div>
           <div class="photo-halo photo-halo--inner"></div>
-          <div class="photo-frame">
-            <img src="omkar jpg.jpg" alt="Omkar Tilloo" />
-          </div>
-          <div class="photo-chip photo-chip--top">
-            <div class="chip-dot"></div>
-            <div>
-              <span class="chip-title">IEEE TEMS Chair</span>
-              <span class="chip-sub">NC State University</span>
-            </div>
-          </div>
-          <div class="photo-chip photo-chip--bot">
-            <div class="chip-dot chip-dot--blue"></div>
-            <div>
-              <span class="chip-title">MEM Candidate</span>
-              <span class="chip-sub">Class of 2026</span>
-            </div>
-          </div>
+          <div class="photo-frame"><img src="omkar jpg.jpg" alt="Omkar Tilloo" /></div>
+          <div class="photo-chip photo-chip--top"><div class="chip-dot"></div><div><span class="chip-title">IEEE TEMS Chair</span><span class="chip-sub">NC State University</span></div></div>
+          <div class="photo-chip photo-chip--bot"><div class="chip-dot chip-dot--blue"></div><div><span class="chip-title">MEM Candidate</span><span class="chip-sub">Class of 2026</span></div></div>
           <div class="photo-deco photo-deco--circle"></div>
           <div class="photo-deco photo-deco--plus">+</div>
         </div>
       </div>
     </div>
-
-    <div class="hero__scroll-hint">
-      <div class="scroll-mouse"><div class="scroll-ball"></div></div>
-      <span>Scroll</span>
-    </div>
+    <div class="hero__scroll-hint"><div class="scroll-mouse"><div class="scroll-ball"></div></div><span>Scroll</span></div>
   </section>
 
-  <!-- ═══ ABOUT ═══ -->
+  <!-- ═══════════════ ABOUT / SKILLS ═══════════════ -->
   <section class="section about" id="about">
     <div class="container">
       <div class="section__label">01 — About</div>
       <h2 class="section__title">Who I Am</h2>
       <div class="about__grid">
         <div class="about__text">
-          <p>I'm a <strong>Supply Chain Operations professional</strong> currently pursuing my Master of Engineering Management at NC State University. With a foundation in Mechanical Engineering and hands-on experience in inbound logistics, inventory management, and warehouse optimization, I bridge the gap between operational excellence and strategic decision-making.</p>
-          <p>I thrive at the intersection of data, systems, and process — whether it's building ERP workflows, developing optimization models, or translating operational data into actionable Power BI dashboards.</p>
-          <p>Beyond academics, I actively lead as <strong>IEEE TEMS Chair at NC State</strong>, connecting students with supply chain and project management industry experts.</p>
+          <p>I'm a <strong>Supply Chain &amp; Operations professional</strong> pursuing my Master of Engineering Management at NC State University. With a foundation in Mechanical Engineering and hands-on industry experience, I specialize in designing efficient supply chains, optimizing warehouse operations, and managing complex cross-functional projects from end to end.</p>
+          <p>My approach is data-first: whether that means integrating ERP workflows to eliminate inventory discrepancies, building optimization models to minimize operational cost, or translating raw operational data into Power BI dashboards that drive better decisions at the leadership level.</p>
+          <p>I've led procurement coordination, reduced lead times, applied Lean methodologies on the warehouse floor, and managed international humanitarian logistics — giving me a 360° view of how supply chains and operations actually work under pressure.</p>
+          <p>Outside the classroom, I serve as <strong>IEEE TEMS Chair at NC State</strong>, bridging the gap between students and industry leaders in engineering management and supply chain.</p>
         </div>
         <div class="about__skills">
           <h3>Technical Skills</h3>
+
           <div class="skill-group">
-            <h4>Supply Chain</h4>
+            <h4>Supply Chain Management</h4>
             <div class="skill-tags">
-              <span>Inbound Logistics</span><span>Inventory Management</span>
-              <span>Demand Planning</span><span>S&amp;OP</span>
-              <span>Procurement</span><span>3PL Coordination</span><span>Process Optimization</span>
+              <span>Inbound Logistics</span><span>Inventory Management</span><span>Demand Planning</span>
+              <span>S&amp;OP</span><span>Procurement &amp; Sourcing</span><span>Vendor &amp; 3PL Coordination</span>
+              <span>Supply Risk Management</span><span>Order Management</span><span>Warehouse Operations</span>
+              <span>Inventory Reconciliation</span><span>Stock Movement Tracking</span>
             </div>
           </div>
+
           <div class="skill-group">
-            <h4>Operations</h4>
+            <h4>Operations &amp; Process Improvement</h4>
             <div class="skill-tags">
-              <span>Lean Manufacturing</span><span>5S</span>
-              <span>Root Cause Analysis</span><span>KPI Tracking</span><span>Just-In-Time</span>
+              <span>Lean Manufacturing</span><span>5S Methodology</span><span>Root Cause Analysis</span>
+              <span>KPI Design &amp; Tracking</span><span>Just-In-Time (JIT)</span><span>Continuous Improvement</span>
+              <span>Process Standardization</span><span>Workflow Automation</span><span>Capacity Planning</span>
+              <span>Operational Analytics</span>
             </div>
           </div>
+
+          <div class="skill-group">
+            <h4>Project Management</h4>
+            <div class="skill-tags">
+              <span>Agile / Scrum</span><span>Waterfall PM</span><span>Earned Value Management (EVM)</span>
+              <span>Risk Management</span><span>Stakeholder Communication</span><span>Cross-functional Leadership</span>
+              <span>Budget Management</span><span>Schedule Development</span><span>Scope Management</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4>Data Analysis &amp; Decision Science</h4>
+            <div class="skill-tags">
+              <span>Operations Research</span><span>NPV &amp; Financial Modeling</span><span>Decision Tree Analysis</span>
+              <span>Monte Carlo Simulation</span><span>Sensitivity Analysis</span><span>MIP Optimization</span>
+              <span>Data Visualization</span><span>TCO Analysis</span>
+            </div>
+          </div>
+
           <div class="skill-group">
             <h4>Systems &amp; Tools</h4>
             <div class="skill-tags">
-              <span>SAP ERP</span><span>COUPA</span><span>Power BI</span>
-              <span>Advanced Excel</span><span>SQL</span><span>MS Access</span>
-              <span>GAMS</span><span>MS Project</span>
+              <span>SAP ERP</span><span>COUPA</span><span>Power BI</span><span>Advanced Excel</span>
+              <span>SQL</span><span>MS Access</span><span>GAMS</span><span>MS Project</span>
+              <span>IPSRA</span><span>Data Modeling</span>
             </div>
           </div>
         </div>
@@ -196,7 +171,7 @@
     </div>
   </section>
 
-  <!-- ═══ EDUCATION ═══ -->
+  <!-- ═══════════════ EDUCATION ═══════════════ -->
   <section class="section education" id="education">
     <div class="container">
       <div class="section__label">02 — Education</div>
@@ -228,7 +203,7 @@
     </div>
   </section>
 
-  <!-- ═══ EXPERIENCE ═══ -->
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
   <section class="section experience" id="experience">
     <div class="container">
       <div class="section__label">03 — Experience</div>
@@ -241,17 +216,25 @@
             <div class="exp__head">
               <div>
                 <h3>Student Consultant</h3>
-                <p class="exp__co">Ally Financial</p>
+                <p class="exp__co">Ally Financial · Raleigh, NC</p>
               </div>
-              <span class="exp__period">Jan – May 2025</span>
+              <span class="exp__period">Jan 2025 – May 2025</span>
             </div>
+            <p class="exp__desc">
+              Embedded within Ally Financial's enterprise operations team as a consulting analyst, I translated complex procurement and inventory datasets into strategic, decision-ready intelligence. My primary mandate was to improve the accuracy of sourcing decisions and inventory reporting across a portfolio of 50+ enterprise contracts — directly supporting the company's operational planning and supplier management functions.
+            </p>
             <ul class="exp__list">
-              <li>Improved operational decision accuracy by <strong>15%</strong> by building an Excel TCO model across 50+ enterprise contracts.</li>
-              <li>Increased inventory visibility by <strong>20%</strong> via COUPA and IPSRA systems management.</li>
-              <li>Built Power BI dashboards tracking supplier KPIs, inventory flow, and performance metrics.</li>
-              <li>Analyzed procurement data to identify supply risks, improving cross-functional coordination.</li>
+              <li>Engineered an Excel-based <strong>Total Cost of Ownership (TCO)</strong> model spanning 50+ enterprise contracts, improving operational decision accuracy by <strong>15%</strong> by surfacing hidden cost drivers in procurement workflows.</li>
+              <li>Elevated inventory visibility and reporting accuracy by <strong>20%</strong> through rigorous management of procurement datasets in <strong>COUPA</strong> and <strong>IPSRA</strong> systems — standardizing tracking for order status, supplier performance, and stock availability.</li>
+              <li>Designed and deployed <strong>Power BI dashboards</strong> translating live operational data into visual KPI reporting for supplier performance, inventory flow, and procurement efficiency — enabling faster leadership decisions.</li>
+              <li>Conducted supply risk analysis across contract and procurement data, identifying vulnerabilities and improving coordination between purchasing, operations, and planning stakeholders.</li>
             </ul>
-            <div class="exp__chips"><span>Power BI</span><span>COUPA</span><span>Excel TCO</span><span>Procurement</span></div>
+            <div class="exp__impact-bar">
+              <div class="exp__impact"><span class="impact-num">15%</span><span class="impact-label">Decision Accuracy↑</span></div>
+              <div class="exp__impact"><span class="impact-num">20%</span><span class="impact-label">Inventory Visibility↑</span></div>
+              <div class="exp__impact"><span class="impact-num">50+</span><span class="impact-label">Contracts Analyzed</span></div>
+            </div>
+            <div class="exp__chips"><span>Power BI</span><span>COUPA</span><span>IPSRA</span><span>Excel TCO</span><span>Procurement Analytics</span><span>Supply Risk</span></div>
           </div>
         </div>
 
@@ -261,17 +244,25 @@
             <div class="exp__head">
               <div>
                 <h3>Supply Chain Operations Intern</h3>
-                <p class="exp__co">Técnicas Reunidas Engineers India Pvt. Ltd.</p>
+                <p class="exp__co">Técnicas Reunidas Engineers India Pvt. Ltd. · Mumbai, India</p>
               </div>
-              <span class="exp__period">Jan – May 2024</span>
+              <span class="exp__period">Jan 2024 – May 2024</span>
             </div>
+            <p class="exp__desc">
+              Joined a leading international engineering and construction firm's India operations, working across the full inbound supply chain lifecycle — from procurement and vendor coordination to warehouse management and inventory reconciliation. Operating in a fast-paced EPC (Engineering, Procurement &amp; Construction) environment, I drove measurable improvements in inventory accuracy, lead time reduction, and warehouse efficiency.
+            </p>
             <ul class="exp__list">
-              <li>Improved inventory visibility by <strong>30%</strong> and reduced data discrepancies by <strong>25%</strong>.</li>
-              <li>Reduced procurement lead times by <strong>10%</strong> and RFx sourcing cycles by <strong>15%</strong>.</li>
-              <li>Increased warehouse utilization by <strong>15%</strong> via Lean 5S across a 5,000+ sq ft storage area.</li>
-              <li>Supported inbound operations through receiving verification and inventory reconciliation.</li>
+              <li>Boosted inventory visibility by <strong>30%</strong> and slashed data discrepancies by <strong>25%</strong> by integrating <strong>ERP workflows</strong> across procurement, warehouse, and inventory tracking functions — eliminating manual reconciliation gaps.</li>
+              <li>Reduced procurement lead times by <strong>10%</strong> and accelerated RFx sourcing cycles by <strong>15%</strong> by coordinating suppliers, logistics stakeholders, and internal teams to tighten inbound shipment planning.</li>
+              <li>Transformed warehouse performance by implementing <strong>Lean 5S methodology</strong> across a 5,000+ sq ft storage area — achieving a <strong>15% increase</strong> in space utilization through structured organization, staging efficiency improvements, and material flow redesign.</li>
+              <li>Coordinated receiving verification, goods movement monitoring, and inventory reconciliation activities to maintain stock accuracy and support uninterrupted project supply chains.</li>
             </ul>
-            <div class="exp__chips"><span>SAP ERP</span><span>Lean 5S</span><span>RFx</span><span>Warehouse Ops</span></div>
+            <div class="exp__impact-bar">
+              <div class="exp__impact"><span class="impact-num">30%</span><span class="impact-label">Inventory Visibility↑</span></div>
+              <div class="exp__impact"><span class="impact-num">15%</span><span class="impact-label">Warehouse Utilization↑</span></div>
+              <div class="exp__impact"><span class="impact-num">10%</span><span class="impact-label">Lead Time Reduced</span></div>
+            </div>
+            <div class="exp__chips"><span>SAP ERP</span><span>Lean 5S</span><span>RFx Sourcing</span><span>Warehouse Ops</span><span>Vendor Coordination</span><span>Inventory Control</span></div>
           </div>
         </div>
 
@@ -279,263 +270,225 @@
     </div>
   </section>
 
-  <!-- ═══ PROJECTS ═══ -->
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
   <section class="section projects" id="projects">
     <div class="container">
       <div class="section__label">04 — Projects</div>
       <h2 class="section__title">Featured Projects</h2>
+      <p class="projects__sub">Click any project card to explore the full case study — overview, role, methodology, and impact.</p>
       <div class="proj__filters">
         <button class="proj__filter active" data-filter="all">All</button>
         <button class="proj__filter" data-filter="supply-chain">Supply Chain</button>
         <button class="proj__filter" data-filter="analytics">Analytics</button>
         <button class="proj__filter" data-filter="optimization">Optimization</button>
         <button class="proj__filter" data-filter="strategy">Strategy</button>
+        <button class="proj__filter" data-filter="pm">Project Mgmt</button>
       </div>
       <div class="proj__grid" id="projGrid">
 
-        <div class="proj__card scroll-reveal" data-category="supply-chain strategy">
+        <!-- PROJECT 1 -->
+        <div class="proj__card scroll-reveal" data-category="supply-chain pm" data-project="wolfRail">
           <div class="proj__top"><span class="proj__cat">Supply Chain · Strategy</span><span class="proj__num">01</span></div>
           <h3>Wolf Rail – 30-Year Fleet Optimization</h3>
-          <p>30-year railcar fleet strategy balancing agriculture growth against declining coal demand, evaluating purchase vs. lease trade-offs with NPV analysis.</p>
+          <p>Developed a 30-year railcar fleet strategy balancing agriculture export growth against declining coal demand, with full NPV financial modeling.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">$48.3M</span><span>NPV</span></div>
             <div class="proj__m"><span class="proj__mv">30 Yrs</span><span>Horizon</span></div>
             <div class="proj__m"><span class="proj__mv">3%</span><span>Hurdle Rate</span></div>
           </div>
-          <div class="proj__chips-wrap"><span>Financial Modeling</span><span>NPV</span><span>Fleet Strategy</span></div>
+          <div class="proj__chips-wrap"><span>Fleet Strategy</span><span>NPV</span><span>Financial Modeling</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="analytics">
+        <!-- PROJECT 2 -->
+        <div class="proj__card scroll-reveal" data-category="analytics" data-project="packRec">
           <div class="proj__top"><span class="proj__cat">Database · Analytics</span><span class="proj__num">02</span></div>
-          <h3>PackRec – Smart Facility Analytics</h3>
-          <p>Centralized MS Access system transforming flat datasets into normalized relational database, automating 90% of staff workflows with Power BI dashboards.</p>
+          <h3>PackRec – Smart Facility Analytics Platform</h3>
+          <p>Centralized operational data for a university wellness facility using relational database architecture and Power BI, automating 90% of staff workflows.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">973</span><span>Records</span></div>
             <div class="proj__m"><span class="proj__mv">90%</span><span>Automated</span></div>
             <div class="proj__m"><span class="proj__mv">20%</span><span>Engagement↑</span></div>
           </div>
           <div class="proj__chips-wrap"><span>MS Access</span><span>Power BI</span><span>IDEF0</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="supply-chain">
-          <div class="proj__top"><span class="proj__cat">Logistics · PM</span><span class="proj__num">03</span></div>
+        <!-- PROJECT 3 -->
+        <div class="proj__card scroll-reveal" data-category="supply-chain pm" data-project="guatemala">
+          <div class="proj__top"><span class="proj__cat">Logistics · Project Mgmt</span><span class="proj__num">03</span></div>
           <h3>Guatemalan Book Project – Global Logistics</h3>
-          <p>Led cross-functional project delivering 1M books to four regions under a $240K budget, managing geopolitical disruptions and port rerouting.</p>
+          <p>Led a cross-functional international humanitarian logistics project to deliver 1M books across four Guatemalan regions under a strict $240K budget.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">1M</span><span>Books</span></div>
             <div class="proj__m"><span class="proj__mv">$250K</span><span>Secured</span></div>
             <div class="proj__m"><span class="proj__mv">25%</span><span>Variance↓</span></div>
           </div>
           <div class="proj__chips-wrap"><span>Agile PM</span><span>EVM</span><span>Risk Mgmt</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="optimization">
+        <!-- PROJECT 4 -->
+        <div class="proj__card scroll-reveal" data-category="optimization" data-project="menuOpt">
           <div class="proj__top"><span class="proj__cat">Operations Research</span><span class="proj__num">04</span></div>
           <h3>Institutional Menu Optimization (MIP)</h3>
-          <p>Mixed Integer Programming model generating month-long institutional menus minimizing cost while satisfying 15+ nutritional constraints via GAMS.</p>
+          <p>Built a Mixed Integer Programming model to generate cost-minimized month-long menus satisfying 15+ nutritional constraints using GAMS.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">$62.60</span><span>Optimal Cost</span></div>
             <div class="proj__m"><span class="proj__mv">6.7%</span><span>Cost Reduction</span></div>
           </div>
           <div class="proj__chips-wrap"><span>GAMS</span><span>MIP</span><span>Sensitivity Analysis</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="analytics optimization">
-          <div class="proj__top"><span class="proj__cat">Decision Analysis</span><span class="proj__num">05</span></div>
+        <!-- PROJECT 5 -->
+        <div class="proj__card scroll-reveal" data-category="analytics optimization" data-project="plasmin">
+          <div class="proj__top"><span class="proj__cat">Decision Analysis · Finance</span><span class="proj__num">05</span></div>
           <h3>Plasmin Commercial Evaluation – NPV Modeling</h3>
-          <p>End-to-end pharmaceutical commercialization model using decision trees and Monte Carlo simulation to compare development alternatives under uncertainty.</p>
+          <p>Built an end-to-end pharmaceutical commercialization evaluation using decision trees, Monte Carlo simulation, and NPV analysis to guide investment strategy.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">$326M</span><span>Base NPV</span></div>
             <div class="proj__m"><span class="proj__mv">$38.5M</span><span>Risk-Adj. NPV</span></div>
           </div>
           <div class="proj__chips-wrap"><span>Monte Carlo</span><span>Decision Trees</span><span>NPV</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="strategy">
-          <div class="proj__top"><span class="proj__cat">Strategy · Retail</span><span class="proj__num">06</span></div>
+        <!-- PROJECT 6 -->
+        <div class="proj__card scroll-reveal" data-category="strategy supply-chain" data-project="trendyThreads">
+          <div class="proj__top"><span class="proj__cat">Strategy · Retail Ops</span><span class="proj__num">06</span></div>
           <h3>Trendy Threads – Omnichannel Transformation</h3>
-          <p>3-year digital transformation roadmap for a legacy retailer, integrating stores as BOPIS/ship-from-store fulfillment nodes with a full KPI framework.</p>
+          <p>Designed a 3-year digital transformation roadmap for a legacy fashion retailer, rebuilding fulfillment capabilities and targeting $120–150M incremental revenue.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">$150M</span><span>Revenue Proj.</span></div>
             <div class="proj__m"><span class="proj__mv">5%→30%</span><span>Online Sales</span></div>
           </div>
-          <div class="proj__chips-wrap"><span>Omnichannel</span><span>KPI Framework</span></div>
+          <div class="proj__chips-wrap"><span>Omnichannel</span><span>KPI Framework</span><span>Fulfillment</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="strategy supply-chain">
-          <div class="proj__top"><span class="proj__cat">EV · Strategy</span><span class="proj__num">07</span></div>
+        <!-- PROJECT 7 -->
+        <div class="proj__card scroll-reveal" data-category="strategy supply-chain" data-project="tesla">
+          <div class="proj__top"><span class="proj__cat">Supply Chain Strategy · EV</span><span class="proj__num">07</span></div>
           <h3>Tesla Supply Chain Strategy Analysis</h3>
-          <p>Analyzed Tesla's vertically integrated EV supply chain expansion to 20M vehicles/year via Porter's Five Forces and geopolitical sourcing risk assessment.</p>
+          <p>Analyzed Tesla's vertically integrated supply chain expansion to 20M vehicles/year using Porter's Five Forces and geopolitical sourcing risk assessment.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">$150B+</span><span>Scope</span></div>
             <div class="proj__m"><span class="proj__mv">20M</span><span>Units/Year</span></div>
           </div>
           <div class="proj__chips-wrap"><span>Porter's 5 Forces</span><span>Vertical Integration</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="analytics strategy">
-          <div class="proj__top"><span class="proj__cat">Competitive Analysis</span><span class="proj__num">08</span></div>
-          <h3>Zomato vs Swiggy – Competitive Operations</h3>
-          <p>Analyzed competitive pricing and logistics in India's food delivery market, modeling 2022–2024 revenue trends and market share dynamics.</p>
+        <!-- PROJECT 8 -->
+        <div class="proj__card scroll-reveal" data-category="analytics strategy" data-project="zomato">
+          <div class="proj__top"><span class="proj__cat">Competitive Operations</span><span class="proj__num">08</span></div>
+          <h3>Zomato vs Swiggy – Competitive Operations Strategy</h3>
+          <p>Modeled competitive pricing and logistics dynamics in India's food delivery duopoly, tracing market share shifts and operational performance drivers.</p>
           <div class="proj__metrics">
-            <div class="proj__m"><span class="proj__mv">61%→34%</span><span>Swiggy Share↓</span></div>
+            <div class="proj__m"><span class="proj__mv">61%→34%</span><span>Swiggy Share Shift</span></div>
           </div>
-          <div class="proj__chips-wrap"><span>Market Analysis</span><span>Pricing Strategy</span></div>
+          <div class="proj__chips-wrap"><span>Market Analysis</span><span>Pricing Strategy</span><span>Logistics</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="optimization analytics">
-          <div class="proj__top"><span class="proj__cat">Decision Analysis</span><span class="proj__num">09</span></div>
+        <!-- PROJECT 9 -->
+        <div class="proj__card scroll-reveal" data-category="optimization analytics" data-project="kidTech">
+          <div class="proj__top"><span class="proj__cat">Capacity Planning · Decision Analysis</span><span class="proj__num">09</span></div>
           <h3>KidTech – Capacity Expansion Decision</h3>
-          <p>Evaluated production capacity strategy across four alternatives using deterministic/probabilistic NPV, tornado analysis, and EVPI for a toy launch.</p>
+          <p>Evaluated four production capacity strategies for a toy launch using deterministic and probabilistic NPV modeling, tornado analysis, and EVPI reasoning.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">$165M</span><span>Best-Case NPV</span></div>
             <div class="proj__m"><span class="proj__mv">$69.1M</span><span>Risk-Adj. NPV</span></div>
           </div>
-          <div class="proj__chips-wrap"><span>Decision Trees</span><span>Monte Carlo</span><span>Tornado</span></div>
+          <div class="proj__chips-wrap"><span>Decision Trees</span><span>Monte Carlo</span><span>Tornado Analysis</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
-        <div class="proj__card scroll-reveal" data-category="supply-chain strategy">
+        <!-- PROJECT 10 -->
+        <div class="proj__card scroll-reveal" data-category="supply-chain strategy" data-project="walmart">
           <div class="proj__top"><span class="proj__cat">Global Supply Chain</span><span class="proj__num">10</span></div>
           <h3>Walmart Global Supply Chain Strategy</h3>
-          <p>Analyzed Walmart's global expansion, comparing centralized vs. localized supply chain control, distribution network design, and vendor relationship management.</p>
+          <p>Analyzed Walmart's global retail expansion, comparing centralized vs. localized supply chain control for distribution network design and vendor management.</p>
           <div class="proj__metrics">
             <div class="proj__m"><span class="proj__mv">Global</span><span>Scope</span></div>
           </div>
-          <div class="proj__chips-wrap"><span>Distribution Strategy</span><span>Vendor Mgmt</span></div>
+          <div class="proj__chips-wrap"><span>Distribution Strategy</span><span>Vendor Mgmt</span><span>Network Design</span></div>
+          <div class="proj__cta-hint">Click to explore →</div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ═══ ACTIVITIES ═══ -->
+  <!-- ═══════════════ ACTIVITIES ═══════════════ -->
   <section class="section activities" id="activities">
     <div class="container">
       <div class="section__label">05 — Extra Activities</div>
       <h2 class="section__title">Leadership &amp; Community</h2>
       <div class="act__grid">
-
         <div class="act__card act__card--hero scroll-reveal">
           <div class="act__glow-bg"></div>
           <div class="act__live-badge">● Live Role</div>
-          <div class="act__icon">
-            <svg viewBox="0 0 44 44" fill="none">
-              <rect width="44" height="44" rx="12" fill="rgba(245,200,66,0.1)" stroke="rgba(245,200,66,0.25)"/>
-              <path d="M22 11l2.7 8.2H33l-7 5 2.7 8.2-7-5-7 5 2.7-8.2-7-5h8.3L22 11z" stroke="#F5C842" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-            </svg>
-          </div>
+          <div class="act__icon"><svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="rgba(245,200,66,0.1)" stroke="rgba(245,200,66,0.25)"/><path d="M22 11l2.7 8.2H33l-7 5 2.7 8.2-7-5-7 5 2.7-8.2-7-5h8.3L22 11z" stroke="#F5C842" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg></div>
           <h3>IEEE TEMS Chair</h3>
           <p class="act__org">NC State University · IEEE Technology &amp; Engineering Management Society</p>
           <div class="act__track">
-            <div class="act__step act__step--on">
-              <div class="act__step-dot"></div>
-              <div class="act__step-text">
-                <strong>Chair</strong>
-                <span>Dec 2025 – Present</span>
-              </div>
-            </div>
+            <div class="act__step act__step--on"><div class="act__step-dot"></div><div class="act__step-text"><strong>Chair</strong><span>Dec 2025 – Present</span></div></div>
             <div class="act__step-line"></div>
-            <div class="act__step">
-              <div class="act__step-dot act__step-dot--past"></div>
-              <div class="act__step-text">
-                <strong>Vice Chair</strong>
-                <span>May – Dec 2025</span>
-              </div>
-            </div>
+            <div class="act__step"><div class="act__step-dot act__step-dot--past"></div><div class="act__step-text"><strong>Vice Chair</strong><span>May – Dec 2025</span></div></div>
           </div>
-          <p class="act__desc">Facilitated an industry panel of supply chain and PM experts to mentor students on real-world career challenges. Leads chapter operations and drives student engagement in engineering management topics.</p>
+          <p class="act__desc">Facilitated an industry panel of supply chain and project management experts to mentor students on navigating real-world career challenges. Leads chapter operations and drives student engagement across engineering management topics at NC State.</p>
         </div>
-
         <div class="act__card scroll-reveal">
-          <div class="act__icon">
-            <svg viewBox="0 0 44 44" fill="none">
-              <rect width="44" height="44" rx="12" fill="rgba(245,200,66,0.1)" stroke="rgba(245,200,66,0.25)"/>
-              <path d="M14 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#F5C842" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="22" cy="18" r="4" stroke="#F5C842" stroke-width="1.5"/>
-            </svg>
-          </div>
+          <div class="act__icon"><svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="rgba(245,200,66,0.1)" stroke="rgba(245,200,66,0.25)"/><path d="M14 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#F5C842" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="18" r="4" stroke="#F5C842" stroke-width="1.5"/></svg></div>
           <h3>Event Management Coordinator</h3>
           <p class="act__org">Maitri IGSA · NC State University</p>
-          <p class="act__desc">Coordinated events for the Indian Graduate Student Association, fostering community and cultural exchange. Managed logistics, outreach, and engagement for student-led programming.</p>
-          <div class="act__tags"><span>Event Planning</span><span>Community</span><span>Student Affairs</span></div>
+          <p class="act__desc">Coordinated cultural and community events for the Indian Graduate Student Association at NC State, managing end-to-end event logistics, outreach campaigns, and student engagement across a diverse international graduate community.</p>
+          <div class="act__tags"><span>Event Planning</span><span>Community Building</span><span>Logistics Coordination</span></div>
         </div>
-
         <div class="act__card scroll-reveal">
-          <div class="act__icon">
-            <svg viewBox="0 0 44 44" fill="none">
-              <rect width="44" height="44" rx="12" fill="rgba(245,200,66,0.1)" stroke="rgba(245,200,66,0.25)"/>
-              <rect x="12" y="16" width="20" height="14" rx="2" stroke="#F5C842" stroke-width="1.5"/>
-              <path d="M16 16v-3a2 2 0 012-2h8a2 2 0 012 2v3" stroke="#F5C842" stroke-width="1.5"/>
-              <path d="M22 22v3M20 23.5h4" stroke="#F5C842" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <div class="act__icon"><svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="rgba(245,200,66,0.1)" stroke="rgba(245,200,66,0.25)"/><rect x="12" y="16" width="20" height="14" rx="2" stroke="#F5C842" stroke-width="1.5"/><path d="M16 16v-3a2 2 0 012-2h8a2 2 0 012 2v3" stroke="#F5C842" stroke-width="1.5"/></svg></div>
           <h3>Student Member</h3>
           <p class="act__org">Project Management Institute (PMI)</p>
-          <p class="act__desc">Engaged with the global PM professional community, staying current with Agile, Waterfall, and hybrid methodologies and best practices.</p>
-          <div class="act__tags"><span>PMI Standards</span><span>Agile</span><span>Waterfall</span></div>
+          <p class="act__desc">Active member of the global PM professional community, engaging with the latest frameworks, methodologies, and thought leadership across Agile, Waterfall, and hybrid project environments.</p>
+          <div class="act__tags"><span>PMI Standards</span><span>Agile</span><span>Waterfall</span><span>PM Frameworks</span></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══ CONTACT ═══ -->
+  <!-- ═══════════════ CONTACT ═══════════════ -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="section__label">06 — Contact</div>
       <h2 class="section__title">Let's Connect</h2>
-      <p class="contact__sub">Open to conversations around supply chain, operations, and engineering management opportunities.</p>
+      <p class="contact__sub">Open to supply chain, operations, and project management opportunities. Let's start a conversation.</p>
       <div class="contact__grid">
-
         <a class="contact__card scroll-reveal" href="tel:+19195206483">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.4 2 2 0 013.6 1.22h3a2 2 0 012 1.72 12 12 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.8a16 16 0 006.29 6.29l.95-.95a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <div class="c-info">
-            <span class="c-label">Phone</span>
-            <span class="c-val">+1 (919) 520-6483</span>
-          </div>
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.4 2 2 0 013.6 1.22h3a2 2 0 012 1.72 12 12 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.8a16 16 0 006.29 6.29l.95-.95a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="c-info"><span class="c-label">Phone</span><span class="c-val">+1 (919) 520-6483</span></div>
           <span class="c-arrow">→</span>
         </a>
-
         <a class="contact__card scroll-reveal" href="mailto:omkartilloo221100@gmail.com">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="c-info">
-            <span class="c-label">Email</span>
-            <span class="c-val">omkartilloo221100@gmail.com</span>
-          </div>
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="c-info"><span class="c-label">Email</span><span class="c-val">omkartilloo221100@gmail.com</span></div>
           <span class="c-arrow">→</span>
         </a>
-
         <a class="contact__card scroll-reveal" href="https://www.linkedin.com/in/omkar-tilloo/" target="_blank" rel="noopener">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </div>
-          <div class="c-info">
-            <span class="c-label">LinkedIn</span>
-            <span class="c-val">linkedin.com/in/omkar-tilloo</span>
-          </div>
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div class="c-info"><span class="c-label">LinkedIn</span><span class="c-val">linkedin.com/in/omkar-tilloo</span></div>
           <span class="c-arrow">→</span>
         </a>
-
         <a class="contact__card contact__card--gold scroll-reveal" href="Omkar_Resume.pdf" download>
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </div>
-          <div class="c-info">
-            <span class="c-label">Resume</span>
-            <span class="c-val">Download CV</span>
-          </div>
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <div class="c-info"><span class="c-label">Resume</span><span class="c-val">Download CV</span></div>
           <span class="c-arrow">↓</span>
         </a>
-
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__logo">[OT]</p>
