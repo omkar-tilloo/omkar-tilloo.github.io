@@ -522,9 +522,21 @@ function init() {
 
 } /* end init */
 
-/* Run when DOM is ready */
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else {
-  init();
-}
+/* Run immediately - multiple fallbacks so GitHub Pages can't block it */
+(function() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  // Absolute fallback - run again after full page load to catch anything missed
+  window.addEventListener('load', function() {
+    init();
+    // Force counters again in case they were 0
+    document.querySelectorAll('.stat__n[data-target]').forEach(function(el) {
+      if (parseInt(el.textContent) === 0) {
+        el.textContent = el.dataset.target;
+      }
+    });
+  });
+})();
